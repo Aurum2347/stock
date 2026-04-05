@@ -15,14 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Важно для получения истории коммитов (дат)
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: Install dependencies (CommonJS-compatible versions)
+      - name: Install dependencies
         run: npm install @octokit/rest@18.12.0 marked@4.3.0
 
       - name: Generate articles.json
